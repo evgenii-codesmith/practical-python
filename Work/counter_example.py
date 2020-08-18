@@ -1,4 +1,3 @@
-import IPython
 from collections import Counter
 
 portfolio = [
@@ -14,6 +13,3 @@ total_shares = Counter()
 
 for name, shares, price in portfolio:
     total_shares[name] += shares
-
-
-IPython.embed()

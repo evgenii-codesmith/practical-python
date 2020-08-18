@@ -1,8 +1,4 @@
-import IPython
 from collections import deque
-import os
-
-print(os.getcwd())
 
 portfolio = [
     ('GOOG', 100, 490.1),
@@ -17,6 +13,3 @@ history = deque(maxlen=10)
 with open('./Data/portfolio.csv') as f:
     for line in f:
         history.append(line)
-
-
-IPython.embed()

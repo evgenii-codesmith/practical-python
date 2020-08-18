@@ -1,4 +1,3 @@
-import IPython
 from collections import defaultdict
 
 portfolio = [
@@ -14,6 +13,3 @@ holdings = defaultdict(list)
 
 for name, shares, price in portfolio:
     holdings[name].append((shares, price))
-
-
-IPython.embed()
