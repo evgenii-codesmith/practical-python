@@ -30,7 +30,6 @@ def read_portfolio(filename):
             record = dict(zip(headers, row))
             portfolio.append(record)
 
-    # print(portfolio)
     return portfolio
 
 
@@ -65,8 +64,3 @@ print((10 * '-' + ' ') * len(headers))
 
 for name, shares, price, change in make_report(stocks, prices):
     print(f'{name:>10s} {shares:^10d} {price:>10.2f} {change:>10.2f}')
-
-# with open('Data/portfoliodate.csv') as f:
-#     data = csv.reader(f)
-#     for line in data:
-#         print(line)
