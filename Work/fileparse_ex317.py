@@ -1,10 +1,9 @@
 import csv
-from io import IOBase
-# from pprint import pprint
+from pprint import pprint
 from pathlib import Path
+from io import IOBase
 import gzip
 import sys
-import io
 
 
 def parse_csv(filename, select=None, types=None, has_headers=True, delimiter=','):
@@ -12,10 +11,10 @@ def parse_csv(filename, select=None, types=None, has_headers=True, delimiter=','
     Parse a CSV file/list into a list of records
     """
 
-    if isinstance(filename, (list, str, io.IOBase)) is False:
+    if isinstance(filename, (list, str, IOBase)) is False:
         sys.exit('Wrong data or file does not exist')
 
-    if isinstance(filename, (list, io.IOBase)):
+    if isinstance(filename, (list, IOBase)):
         f = filename
     elif Path(filename).suffix == '.gz':
         f = gzip.open(filename, 'rt')
@@ -64,14 +63,14 @@ def parse_csv(filename, select=None, types=None, has_headers=True, delimiter=','
 # pprint(parse_csv('Work/Data/prices.csv',
 #                  types=[str, float], has_headers=False))
 
-# pprint(parse_csv('Work/Data/prices.csv', has_headers=False))
+# pprint(parse_csv('Data/prices.csv', has_headers=False))
+
+# pprint(parse_csv('Data/portfolio.csv',
+#                select=['name', 'price', 'shares'], types=[str, float, int]))
+
 
 # pprint(parse_csv('Work/Data/portfolio.csv',
-#                  select=['name', 'price', 'shares'], types=[str, float, int]))
-
-
-# pprint(parse_csv('Work/Data/portfolio.csv',
-#                  select=['name', 'price', 'shares'], types=[str, float, int]))
+#                 select = ['name', 'price', 'shares'], types = [str, float, int]))
 
 # pprint(parse_csv('Work/Data/portfolio.csv',
 #                  select=['name', 'price', 'shares']))
