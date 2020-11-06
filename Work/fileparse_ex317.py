@@ -1,8 +1,10 @@
 import csv
+from io import IOBase
 # from pprint import pprint
 from pathlib import Path
 import gzip
 import sys
+import io
 
 
 def parse_csv(filename, select=None, types=None, has_headers=True, delimiter=','):
@@ -10,10 +12,10 @@ def parse_csv(filename, select=None, types=None, has_headers=True, delimiter=','
     Parse a CSV file/list into a list of records
     """
 
-    if isinstance(filename, (list, str)) is False:
+    if isinstance(filename, (list, str, io.IOBase)) is False:
         sys.exit('Wrong data or file does not exist')
 
-    if isinstance(filename, list):
+    if isinstance(filename, (list, io.IOBase)):
         f = filename
     elif Path(filename).suffix == '.gz':
         f = gzip.open(filename, 'rt')
