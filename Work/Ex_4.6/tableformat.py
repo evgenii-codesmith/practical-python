@@ -4,13 +4,13 @@ class TableFormatter():
         """
         Emit the table headings
         """
-        raise NotImplementedError
+        pass
 
     def row(self, rowdata):
         """
         Emit a single row of table data
         """
-        raise NotImplementedError
+        pass
 
 
 class TextTableFormatter(TableFormatter):
