@@ -2,6 +2,7 @@
 
 import fileparse
 import tableformat
+#from IPython import embed
 
 from stock import Stock
 
@@ -65,7 +66,7 @@ def portfolio_report(portfoliofile, pricefile):
     report = make_report_data(portfolio, prices)
 
     # Print it out
-    formatter = tableformat.TextTableFormatter()
+    formatter = tableformat.HTMLTableFormatter()
     print_report(report, formatter)
 
 
