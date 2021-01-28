@@ -1,4 +1,5 @@
 class TableFormatter():
+
     def heading(self, headers):
         """
         Emit the table headings
