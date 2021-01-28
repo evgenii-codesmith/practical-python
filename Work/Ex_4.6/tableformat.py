@@ -1,6 +1,3 @@
-from IPython.terminal.embed import embed
-
-
 class TableFormatter():
     def heading(self, headers):
         """
@@ -41,6 +38,5 @@ class HTMLTableFormatter(TableFormatter):
         print('<tr><th>Name</th><th>Shares</th><th>Price</th><th>Change</th></tr>')
 
     def row(self, rowdata):
-        # embed()
         print(
             f'<tr><td>{rowdata[0]}</td><td>{rowdata[1]}</td><td>{rowdata[2]}</td><td>{rowdata[3]}</td></tr>')

@@ -2,7 +2,6 @@
 
 import fileparse
 import tableformat
-#from IPython import embed
 
 from stock import Stock
 
